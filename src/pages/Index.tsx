@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,6 +11,7 @@ import WaterLog from '@/components/WaterLog';
 import GoalSetting from '@/components/GoalSetting';
 import Statistics from '@/components/Statistics';
 import useLocalStorage from '@/hooks/useLocalStorage';
+import UserProfile from '@/components/UserProfile';
 
 interface WaterEntry {
   id: string;
@@ -194,6 +194,8 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="settings" className="space-y-6">
+            <UserProfile />
+            
             <GoalSetting currentGoal={dailyGoal} onGoalChange={setDailyGoal} />
             
             <Card className="p-6 bg-white/70 backdrop-blur-sm border-blue-200 shadow-lg">
